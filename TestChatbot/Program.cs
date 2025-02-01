@@ -31,7 +31,11 @@ Kernel kernel = builder.Build();
 var chat = kernel.GetRequiredService<IChatCompletionService>();
 
 var history = new ChatHistory(); // 프롬프트로 보임
-history.AddSystemMessage("You are a useful chatbot. If you don't know an answer, say 'I don't know!'. Always reply in a funny way. Use emojis if possible.");
+history.AddSystemMessage(
+    """
+    넌 도우미 쳇봇이야
+    """
+    );
 
 while (true)
 {
